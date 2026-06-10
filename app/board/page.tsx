@@ -1,8 +1,13 @@
-import IframeEmbed from '@/components/IframeEmbed'
+'use client'
+
+import dynamic from 'next/dynamic'
+
+const TrelloBoard = dynamic(() => import('@/components/TrelloBoard'), { ssr: false })
+
+const trelloUrl = process.env.NEXT_PUBLIC_TRELLO_URL
+const boardId = trelloUrl?.split('/b/')[1]?.split('/')[0]
 
 export default function BoardPage() {
-  const trelloUrl = process.env.NEXT_PUBLIC_TRELLO_URL
-
   return (
     <div className="flex flex-col h-[calc(100vh-4rem)]">
       <div className="flex-shrink-0 px-6 py-4 border-b border-rv-border bg-rv-base">
@@ -16,7 +21,7 @@ export default function BoardPage() {
           <div className="flex items-center gap-3 flex-shrink-0 ml-4">
             <div className="flex items-center gap-1.5 text-[11px] text-rv-text-3">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              Live via Trello
+              Live via Trello API
             </div>
             {trelloUrl && (
               <a
@@ -34,8 +39,25 @@ export default function BoardPage() {
           </div>
         </div>
       </div>
+
       <div className="flex-1 overflow-hidden">
-        <IframeEmbed src={trelloUrl} title="Trello Board" height="100%" />
+        {boardId ? (
+          <TrelloBoard boardId={boardId} />
+        ) : (
+          <div
+            className="flex flex-col items-center justify-center border border-dashed border-rv-border-2 rounded-lg m-4"
+            style={{ height: 'calc(100% - 2rem)' }}
+          >
+            <p className="text-rv-text-2 text-sm font-medium">Trello Board</p>
+            <p className="text-rv-text-3 text-xs mt-1">
+              Add{' '}
+              <code className="bg-rv-raised px-1.5 py-0.5 rounded text-[10px] border border-rv-border-2 text-emerald-500">
+                NEXT_PUBLIC_TRELLO_URL
+              </code>{' '}
+              to connect
+            </p>
+          </div>
+        )}
       </div>
     </div>
   )
