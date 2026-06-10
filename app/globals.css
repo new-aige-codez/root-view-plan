@@ -2,25 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
 
-/* Prose styles for react-markdown rendered content */
-.prose h1 { @apply text-2xl font-bold text-gray-900 mb-4 mt-6; }
-.prose h2 { @apply text-xl font-semibold text-gray-800 mb-3 mt-5 border-b border-gray-200 pb-1; }
-.prose h3 { @apply text-lg font-semibold text-gray-800 mb-2 mt-4; }
-.prose p  { @apply text-gray-700 leading-relaxed mb-3; }
-.prose ul { @apply list-disc pl-6 mb-3 space-y-1 text-gray-700; }
-.prose ol { @apply list-decimal pl-6 mb-3 space-y-1 text-gray-700; }
+/* Dark prose — react-markdown */
+.prose h1 { @apply text-[22px] font-bold text-[#f0f0f0] mb-4 mt-6; }
+.prose h2 { @apply text-base font-semibold text-[#e0e0e0] mb-3 mt-7 pb-2 border-b border-[#1e1e1e]; }
+.prose h3 { @apply text-[13px] font-semibold text-[#aaa] mb-2 mt-5 uppercase tracking-widest; }
+.prose p  { @apply text-[#777] leading-relaxed mb-3 text-sm; }
+.prose ul { @apply list-disc pl-5 mb-3 space-y-1 text-[#777] text-sm; }
+.prose ol { @apply list-decimal pl-5 mb-3 space-y-1 text-[#777] text-sm; }
 .prose li { @apply leading-relaxed; }
-.prose strong { @apply font-semibold text-gray-900; }
-.prose em    { @apply italic; }
-.prose code  { @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-gray-800; }
-.prose pre   { @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4; }
-.prose pre code { @apply bg-transparent p-0 text-gray-100; }
-.prose blockquote { @apply border-l-4 border-green-500 pl-4 italic text-gray-600 my-4; }
+.prose strong { @apply font-semibold text-[#c0c0c0]; }
+.prose em { @apply italic text-[#888]; }
+.prose code { @apply bg-[#161616] px-1.5 py-0.5 rounded text-[11px] font-mono text-[#10b981] border border-[#222]; }
+.prose pre { @apply bg-[#0d0d0d] text-[#d0d0d0] p-4 rounded-lg overflow-x-auto mb-4 border border-[#222]; }
+.prose pre code { @apply bg-transparent p-0 text-[#d0d0d0] border-0; }
+.prose blockquote { @apply border-l-2 border-[#10b981] pl-4 italic text-[#555] my-5 bg-[#0c1510] py-2 pr-3 rounded-r-md; }
 .prose table { @apply w-full border-collapse mb-4; }
-.prose th { @apply bg-gray-100 text-left px-3 py-2 text-sm font-semibold text-gray-700 border border-gray-200; }
-.prose td { @apply px-3 py-2 text-sm text-gray-700 border border-gray-200; }
-.prose tr:nth-child(even) td { @apply bg-gray-50; }
-.prose a  { @apply text-green-600 underline hover:text-green-700; }
-.prose hr { @apply border-gray-200 my-6; }
+.prose th { @apply bg-[#161616] text-left px-3 py-2 text-[10px] font-semibold text-[#555] border border-[#1e1e1e] uppercase tracking-wider; }
+.prose td { @apply px-3 py-2 text-xs text-[#888] border border-[#181818]; }
+.prose tr:nth-child(even) td { @apply bg-[#0e0e0e]; }
+.prose a { @apply text-[#10b981] no-underline hover:text-[#34d399] transition-colors; }
+.prose hr { @apply border-[#1e1e1e] my-8; }
+.prose input[type='checkbox'] { @apply mr-2 accent-emerald-500; }

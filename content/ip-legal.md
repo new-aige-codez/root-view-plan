@@ -42,9 +42,26 @@ The Root View patent covers an automated system for measuring runoff water chemi
 
 ## Prior Art
 
-Based on the official patent search (Melle Newman-Adjiri and Seyed Robert Brubaker search reports on file), **no substantially close prior art was found**. The closest competitor device — AROYA Drip and Drain Station — measures a combined, non-isolated feed/drain stream and was not found to anticipate Root View's claims.
+Based on the official patent search (Melle Newman-Adjiri and Seyed Robert Brubaker search reports on file), no prior art was found that directly anticipates Root View's claims. Search reports are on file in `Docs/Official/`.
 
-Search reports are on file in `Docs/Official/`.
+**Sequential sampler prior art — on file, not invalidating:**
+
+| Patent | Title | Why It Doesn't Anticipate |
+|---|---|---|
+| US 8,302,464 | Sequential stormwater/runoff sampler | Surface water runoff, not hydroponic substrate; no EC/pH measurement |
+| US 8,596,149 | Composite water sampler with sequential collection | Water quality sampling, not grow-zone leachate; no valve-per-zone isolation of substrate drain |
+| US 4,092,995 | Irrigation sequence valve control | Field irrigation sequencing, not substrate drain chemistry; no sample-and-measure cycle |
+
+None of these cover **hydroponic per-zone substrate leachate measurement**. Claims should distinguish on: (1) substrate/growing-medium application, (2) normally-closed motorized valve per drain zone, (3) pH + EC + volume measurement of isolated leachate, (4) sequential isolation flush cycle between zones.
+
+**No AROYA/Addium patent on drain monitoring found** (as of research cutoff). AROYA Drip and Drain is a product, not a patent filing. Root View's method patent has no direct filed-patent competitor.
+
+**Ridder DrainChecker** (Netherlands commercial greenhouse product) is a device a patent examiner may cite as prior art. Key distinction: Ridder uses **physical separate sensors** placed per zone — it does not use a centralized sequential valve-isolation architecture. Root View's patent covers the *method* of opening normally-closed valves one at a time so a single sensor chamber samples each zone sequentially with flush cycles between. These are architecturally distinct approaches.
+
+Additional distinction points for claim drafting:
+- Ridder targets Dutch-model commercial greenhouse (tomato, pepper); not designed for US cannabis drain-trough retrofit
+- No cannabis platform (AROYA) integration
+- No sequential isolation flush cycle claim
 
 ---
 

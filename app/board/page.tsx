@@ -5,13 +5,34 @@ export default function BoardPage() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-4rem)]">
-      <div className="px-6 py-4 bg-white border-b border-gray-200 flex-shrink-0">
-        <p className="text-sm text-gray-600 max-w-2xl">
-          Kanban board tracking everything from raw idea to shipped decision.
-          Column flow:{' '}
-          <span className="font-medium text-gray-800">Idea → Reviewed → Validated / Worth Exploring → To Do → In Progress → Review → Done</span>.
-          Edit directly in Trello; the view here is read-only.
-        </p>
+      <div className="flex-shrink-0 px-6 py-4 border-b border-rv-border bg-rv-base">
+        <div className="flex items-center justify-between">
+          <p className="text-[13px] text-rv-text-2 max-w-xl">
+            Kanban from idea to shipped decision.{' '}
+            <span className="text-rv-text-3">
+              Idea → Reviewed → Validated → To Do → In Progress → Review → Done
+            </span>
+          </p>
+          <div className="flex items-center gap-3 flex-shrink-0 ml-4">
+            <div className="flex items-center gap-1.5 text-[11px] text-rv-text-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              Live via Trello
+            </div>
+            {trelloUrl && (
+              <a
+                href={trelloUrl.replace('.html', '')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] text-rv-text-3 hover:text-rv-text-2 border border-rv-border-2 rounded px-2.5 py-1 flex items-center gap-1.5 transition-colors"
+              >
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Open in Trello
+              </a>
+            )}
+          </div>
+        </div>
       </div>
       <div className="flex-1 overflow-hidden">
         <IframeEmbed src={trelloUrl} title="Trello Board" height="100%" />

@@ -17,7 +17,7 @@ flowchart TD
 
     A --> J{Hardware Platform}
     J --> K["V.1 — Arduino + plywood box\\n❌ Abandoned: impeller sensor height req."]
-    J --> L["V.2 — ESP32 + Waveshare 2.8\\"\\n✅ Active build"]
+    J --> L["V.2 — ESP32 + Waveshare 2.8in\\n✅ Active build"]
     L --> M{Enclosure}
     M --> N["Commercial IP-rated\\n❌ No suitable form factor found"]
     M --> O["Custom 3D print (Elegoo Saturn / outsourced)\\n✅ Active"]
@@ -37,21 +37,39 @@ export default function DecisionTreePage() {
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-8">
-      <section>
-        <h2 className="text-xl font-semibold text-gray-800 mb-1 border-b border-gray-200 pb-1">Live Decision Map</h2>
-        <p className="text-sm text-gray-500 mb-4">
-          Major forks, active paths (✅), abandoned paths (❌), and open decisions (⚠️/🕐).
-          Edit the diagram by modifying the <code className="bg-gray-100 px-1 rounded text-xs">DECISION_TREE</code> constant
-          in <code className="bg-gray-100 px-1 rounded text-xs">app/decision-tree/page.tsx</code>.
+
+      <section className="mb-10">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-rv-text-3">
+            Live Decision Map
+          </span>
+          <div className="flex-1 h-px bg-rv-border" />
+          <span className="text-[11px] text-rv-text-3">
+            ✅ active &nbsp;·&nbsp; ❌ abandoned &nbsp;·&nbsp; ⚠️ open &nbsp;·&nbsp; 🕐 pending
+          </span>
+        </div>
+        <p className="text-[12px] text-rv-text-3 mb-4">
+          Edit by modifying the{' '}
+          <code className="bg-rv-raised px-1.5 py-0.5 rounded text-[10px] border border-rv-border-2 text-emerald-500">
+            DECISION_TREE
+          </code>
+          {' '}constant in{' '}
+          <code className="bg-rv-raised px-1.5 py-0.5 rounded text-[10px] border border-rv-border-2 text-emerald-500">
+            app/decision-tree/page.tsx
+          </code>.
         </p>
         <DiagramSection chart={DECISION_TREE} />
       </section>
 
-      <section className="mt-10">
-        <div className="prose">
-          <ReactMarkdown>{archive}</ReactMarkdown>
-        </div>
-      </section>
+      <div className="flex items-center gap-2 mb-5">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-rv-text-3">
+          Decision Archive
+        </span>
+        <div className="flex-1 h-px bg-rv-border" />
+      </div>
+      <div className="prose">
+        <ReactMarkdown>{archive}</ReactMarkdown>
+      </div>
     </div>
   )
 }

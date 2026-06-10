@@ -11,10 +11,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 text-gray-900 antialiased">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        />
+      </head>
+      <body className="bg-rv-base text-rv-text antialiased">
         <Sidebar />
         <TopBar />
-        {/* Offset for fixed sidebar (w-56 = 224px) and topbar (h-16 = 64px) */}
         <main className="ml-56 mt-16 min-h-[calc(100vh-4rem)]">
           {children}
         </main>

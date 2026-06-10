@@ -10,7 +10,7 @@ interface DiagramSectionProps {
 
 export default function DiagramSection({ chart }: DiagramSectionProps) {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-4 overflow-x-auto">
+    <div className="bg-rv-surface border border-rv-border rounded-lg p-5 overflow-x-auto">
       <MermaidDiagram chart={chart} />
     </div>
   )

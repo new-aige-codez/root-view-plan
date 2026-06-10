@@ -5,15 +5,22 @@ export default function BOMPage() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-4rem)]">
-      <div className="px-6 py-4 bg-white border-b border-gray-200 flex-shrink-0">
-        <p className="text-sm text-gray-600 max-w-2xl">
-          Live bill of materials for the Root View device. Tracks every component — part name, supplier,
-          quantity, unit cost, and line total. Edit directly in Google Sheets; changes reflect here automatically.
-          Version column tracks which hardware revision each part belongs to.
-        </p>
+      <div className="flex-shrink-0 px-6 py-4 border-b border-rv-border bg-rv-base">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-[13px] text-rv-text-2 max-w-xl">
+              Every component — part name, supplier, quantity, unit cost, and line total.
+              Version column tracks which hardware revision each part belongs to.
+            </p>
+          </div>
+          <div className="flex items-center gap-2 text-[11px] text-rv-text-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            Live via Google Sheets
+          </div>
+        </div>
       </div>
       <div className="flex-1 overflow-hidden">
-        <IframeEmbed src={bomUrl} title="Bill of Materials – Google Sheets" height="100%" />
+        <IframeEmbed src={bomUrl} title="Bill of Materials — Google Sheets" height="100%" />
       </div>
     </div>
   )
