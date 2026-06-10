@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Prose styles for react-markdown rendered content */
+.prose h1 { @apply text-2xl font-bold text-gray-900 mb-4 mt-6; }
+.prose h2 { @apply text-xl font-semibold text-gray-800 mb-3 mt-5 border-b border-gray-200 pb-1; }
+.prose h3 { @apply text-lg font-semibold text-gray-800 mb-2 mt-4; }
+.prose p  { @apply text-gray-700 leading-relaxed mb-3; }
+.prose ul { @apply list-disc pl-6 mb-3 space-y-1 text-gray-700; }
+.prose ol { @apply list-decimal pl-6 mb-3 space-y-1 text-gray-700; }
+.prose li { @apply leading-relaxed; }
+.prose strong { @apply font-semibold text-gray-900; }
+.prose em    { @apply italic; }
+.prose code  { @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-gray-800; }
+.prose pre   { @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4; }
+.prose pre code { @apply bg-transparent p-0 text-gray-100; }
+.prose blockquote { @apply border-l-4 border-green-500 pl-4 italic text-gray-600 my-4; }
+.prose table { @apply w-full border-collapse mb-4; }
+.prose th { @apply bg-gray-100 text-left px-3 py-2 text-sm font-semibold text-gray-700 border border-gray-200; }
+.prose td { @apply px-3 py-2 text-sm text-gray-700 border border-gray-200; }
+.prose tr:nth-child(even) td { @apply bg-gray-50; }
+.prose a  { @apply text-green-600 underline hover:text-green-700; }
+.prose hr { @apply border-gray-200 my-6; }
